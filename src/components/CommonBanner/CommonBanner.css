@@ -1,0 +1,17 @@
+.background-imageClass{
+    height: 60vh;
+    position:relative;
+     background:  url('../../Images//banner.jpg');
+     background-size:cover; 
+     background-repeat: no-repeat;
+  }
+  
+  .background-image-overlayClass::after {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(3,2,12,0.8);
+  }

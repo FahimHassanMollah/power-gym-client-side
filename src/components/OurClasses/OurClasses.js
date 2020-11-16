@@ -1,42 +1,39 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import classData from '../../fakeData/classData';
+import CommonBanner from '../CommonBanner/CommonBanner';
 import Footer from '../Footer/Footer';
 import NavBar from '../Home/NavBar/NavBar';
 import OurClassesCard from '../OurClassesCard/OurClassesCard';
 import './OurClasses.css'
 const OurClasses = () => {
     const [ourClass, setOurClass] = useState([]);
-    console.log(ourClass);
+    // console.log(ourClass);
     useEffect(() => {
-       setOurClass(classData);
+        //    setOurClass(classData);
+        fetch('http://localhost:8080/getAllClass')
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setOurClass(data);
+            })
     }, [])
     return (
         <div>
-            <NavBar></NavBar>
-            <div className="background-imageClass">
-
-                <div className="background-image-overlayClass">
-                    <Container >
-                        <Row >
-                            <Col md={12} style={{ zIndex: "10", paddingTop: "150px" }}>
-                                <h1 className="text-white text-center font-weight-bold" style={{ fontSize: "55px" }}>OUR CLASSES</h1>
-                            </Col>
-
-                        </Row>
-                    </Container>
-                </div>
-            </div>
+            <CommonBanner></CommonBanner>
             <div>
                 <Container>
-                    <Row className="d-flex justify-content-center">
-                        
-                            {
-                              ourClass.length >0 && ourClass.map((clas,index)=><OurClassesCard clas={clas} key={index}></OurClassesCard>)
-                            }
-                           
-                      
+                    <Row className="d-flex justify-content-center py-4">
+
+                        {
+                            ourClass.length > 0 ? ourClass.map((clas, index) => <OurClassesCard clas={clas} key={index}></OurClassesCard>) :
+                                <Spinner size="" animation="border" variant="primary"  role="status">
+                                    <span style={{fontSize:"120px"}} className="sr-only">Loading...</span>
+                                </Spinner>
+                        }
+
+
                     </Row>
                 </Container>
             </div>

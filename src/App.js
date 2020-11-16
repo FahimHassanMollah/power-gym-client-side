@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home/Home';
 import OurClasses from './components/OurClasses/OurClasses';
+import ClassSchedule from './components/ClassSchedule/ClassSchedule';
 function App() {
   return (
     <div className="">
@@ -22,8 +23,8 @@ function App() {
           <Route path="/ourClasses">
             <OurClasses></OurClasses>
           </Route>
-          <Route path="/will-match">
-            
+          <Route path="/classSchedule/:id">
+            <ClassSchedule></ClassSchedule>
           </Route>
           <Route path="*">
             

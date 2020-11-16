@@ -3,7 +3,7 @@ const classData = [
         id: 1,
         name: 'Psycho Training',
         bgImg: 'https://i.ibb.co/yyB1f7c/victor-freitas-Wv-DYd-XDzkhs-unsplash.jpg',
-        features: ['gym', 'gym', 'gym', 'gym', 'gym'],
+        features: [' Having Slimmer Shapely Thighs', ' Getting Stronger Body', ' Increased Metabolism', ' Increased Muscular Endurance', ' Maximum Results in Less Time',' Firm Hips and Tummy'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
                     {day: 'Tuesday', time: "10:00 AM- 10:00 PM"},
@@ -24,8 +24,8 @@ const classData = [
     {
         id: 2,
         name: 'Self Defense',
-        bgImg: 'https://i.ibb.co/yyB1f7c/victor-freitas-Wv-DYd-XDzkhs-unsplash.jpg',
-        features: ['gym', 'gym', 'gym', 'gym', 'gym'],
+        bgImg: 'https://i.imgur.com/FSbUZZ6.jpg',
+        features: [' Having Slimmer Shapely Thighs', ' Getting Stronger Body', ' Increased Metabolism', ' Increased Muscular Endurance', ' Maximum Results in Less Time',' Firm Hips and Tummy'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
                     {day: 'Tuesday', time: "10:00 AM- 10:00 PM"},
@@ -47,7 +47,7 @@ const classData = [
         id: 3,
         name: 'Advance Gym',
         bgImg: 'https://i.ibb.co/TTXQjSw/humphrey-muleba-LOA2m-Tj1vhc-unsplash.jpg',
-        features: ['gym', 'gym', 'gym', 'gym', 'gym'],
+        features: [' Having Slimmer Shapely Thighs', ' Getting Stronger Body', ' Increased Metabolism', ' Increased Muscular Endurance', ' Maximum Results in Less Time',' Firm Hips and Tummy'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
                     {day: 'Tuesday', time: "10:00 AM- 10:00 PM"},
@@ -70,7 +70,7 @@ const classData = [
         id: 4,
         name: 'Cardio Training',
         bgImg: 'https://i.ibb.co/fD5Qwqs/alora-griffiths-Tuzrz-Arccvc-unsplash.jpg',
-        features: ['gym', 'gym', 'gym', 'gym', 'gym'],
+        features: [' Having Slimmer Shapely Thighs', ' Getting Stronger Body', ' Increased Metabolism', ' Increased Muscular Endurance', ' Maximum Results in Less Time',' Firm Hips and Tummy'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
                     {day: 'Tuesday', time: "10:00 AM- 10:00 PM"},
@@ -91,8 +91,8 @@ const classData = [
     {
         id: 5,
         name: 'Strength Training',
-        bgImg: 'https://i.ibb.co/TTXQjSw/humphrey-muleba-LOA2m-Tj1vhc-unsplash.jpg',
-        features: ['gym', 'gym', 'gym', 'gym', 'gym'],
+        bgImg: 'https://i.imgur.com/9tABzaB.jpg',
+        features: [' Having Slimmer Shapely Thighs', ' Getting Stronger Body', ' Increased Metabolism', ' Increased Muscular Endurance', ' Maximum Results in Less Time',' Firm Hips and Tummy'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
                     {day: 'Tuesday', time: "10:00 AM- 10:00 PM"},
@@ -113,8 +113,8 @@ const classData = [
     {
         id: 6,
         name: 'Psycho Training',
-        bgImg: 'https://i.ibb.co/fD5Qwqs/alora-griffiths-Tuzrz-Arccvc-unsplash.jpg',
-        features: ['gym', 'gym', 'gym', 'gym', 'gym'],
+        bgImg: 'https://i.imgur.com/he6j2zr.jpg',
+        features: [' Having Slimmer Shapely Thighs', ' Getting Stronger Body', ' Increased Metabolism', ' Increased Muscular Endurance', ' Maximum Results in Less Time',' Firm Hips and Tummy'],
         schedule: [
                     {day: 'Monday' , time: "10:00 AM- 10:00 PM"},
                     {day: 'Tuesday', time: "10:00 AM- 10:00 PM"},

@@ -1,21 +1,23 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
-
+import { Button, Card, Col } from 'react-bootstrap';
+import './OurClassesCard.css';
+import { FaLongArrowAltRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const OurClassesCard = (props) => {
     console.log(props.clas);
     return (
         <div>
-            <Col md={4}>
-                <Card style={{ width: '350px' }}>
-                    <Card.Img variant="top" src={props.clas.bgImg} />
-                    <Card.Body>
-    <Card.Title>{props.clas.name}</Card.Title>
-                        
-                    </Card.Body>
+            <Link to={`/classSchedule/${props.clas.id}`}>
 
-
-                </Card>
-            </Col>
+                <Col md={4} className="py-1 ">
+                    <Card className="cards fards h-100" style={{ width: '350px' }}>
+                        <Card.Img style={{height:"300px"}} variant="top" src={props.clas.bgImg} />
+                        <Card.Body>
+                            <Button className="card-text">{props.clas.name} <span className="ml-2" style={{ fontSize: "20px" }}> <FaLongArrowAltRight /></span></Button>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Link>
         </div>
     );
 };

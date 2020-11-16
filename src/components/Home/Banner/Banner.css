@@ -1,0 +1,30 @@
+.banner-btn{
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #fcd842;
+    color: #222;
+    border-color: transparent;
+    border-radius: 0;
+    font-weight: 900;
+    font-style: 2em;
+    padding: 10px 40px;
+    text-transform: uppercase;
+}
+
+.background-image{
+    height: 100vh;
+    position:relative;
+     background:  url('../../../Images/banner.jpg');
+     background-size:cover; 
+     background-repeat: no-repeat;
+  }
+  
+  .background-image-overlay::after {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(3,2,12,0.8);
+  }

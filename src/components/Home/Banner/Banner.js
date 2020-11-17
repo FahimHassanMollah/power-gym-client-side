@@ -18,7 +18,7 @@ const Banner = () => {
                             <h1 className="font-weight-bold">THE BEST FITNESS STUDIO <br /> IN TOWN</h1>
                             <p className="pt-4 d-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores aspernatur delectus, nam adipisci neque eum numquam. Itaque, alias facilis expedita dignissimos.</p>
                             <br />
-                            <Link to="purchase/1">
+                            <Link to="/pricing">
                                 <button className="banner-btn">Join us</button>
                             </Link>
                         </Col>

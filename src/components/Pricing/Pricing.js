@@ -26,7 +26,7 @@ const Pricing = () => {
             <Container>
                 {
 
-                    pricing.length > 0 ? <Row>
+                    pricing.length > 0 ? <Row className="d-flex justify-content-center">
                         {
                             pricing.map((p, index) => <PricingCard key={index} pricing={p}></PricingCard>)
                         }

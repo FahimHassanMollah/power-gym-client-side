@@ -9,7 +9,7 @@ const ClassSchedule = () => {
     const { id } = useParams();
     const [currentClass, setCurrentClass] = useState({});
     useEffect(() => {
-        fetch('http://localhost:8080/class/' + id)
+        fetch('https://murmuring-refuge-17049.herokuapp.com/class/' + id)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

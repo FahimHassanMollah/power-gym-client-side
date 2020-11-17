@@ -9,7 +9,7 @@ const Pricing = () => {
     const [pricing, setPricing] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/getAllPlan')
+        fetch('https://murmuring-refuge-17049.herokuapp.com/getAllPlan')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

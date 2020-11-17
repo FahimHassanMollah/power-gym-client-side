@@ -12,7 +12,7 @@ const OurClasses = () => {
     // console.log(ourClass);
     useEffect(() => {
         //    setOurClass(classData);
-        fetch('http://localhost:8080/getAllClass')
+        fetch('https://murmuring-refuge-17049.herokuapp.com/getAllClass')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

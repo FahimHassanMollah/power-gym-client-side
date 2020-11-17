@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CommonBanner from '../CommonBanner/CommonBanner';
 import { Steps } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css'
@@ -11,26 +11,29 @@ const Purchase = () => {
     const [stepCounter, setStepCounter] = useState(0);
     const [allData, setAlldData] = useState({});
     const stepHandlerFunction = (data) => {
-        setStepCounter(stepCounter + 1);
         const newData = { ...allData, ...data };
         setAlldData(newData);
+        setStepCounter(stepCounter + 1);
     }
-    if (stepCounter === 2) {
-        fetch('http://localhost:8080/insertPaymentInformation', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(allData),
-        })
-            // .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
+    useEffect(() => {
+        if (stepCounter === 2) {
+            fetch('https://murmuring-refuge-17049.herokuapp.com/insertPaymentInformation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(allData),
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    }
+                // .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+    }, [stepCounter===2])
+   
     console.log(allData, 'all data');
 
     return (

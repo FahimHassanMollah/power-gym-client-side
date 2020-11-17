@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Link, useParams } from 'react-router-dom';
 import CommonBanner from '../CommonBanner/CommonBanner';
 import Banner from '../Home/Banner/Banner';
 import checkMark from '../../Images/checkmark-square-2.png';
@@ -19,12 +19,12 @@ const ClassSchedule = () => {
     return (
         <div>
             <CommonBanner></CommonBanner>
-            {currentClass.id &&
+            {currentClass.id ?
 
                 <Container className="py-5 mt-5">
                     <Row>
                         <Col md={6}>
-                            <div>
+                            <div className="fardss">
                                 <img className="w-100 h-100" src={currentClass.bgImg} alt="" />
                             </div>
                             <div className="pt-5">
@@ -51,9 +51,17 @@ const ClassSchedule = () => {
                                     
                                 </div>
                             </div>
+                            <div className="pt-5 text-center">
+                               <Link to="/pricing"> <Button style={{border:'none',fontSize:"25px"}} className="bg-warning px-4 py-2 ">Join Us</Button></Link>
+                            </div>
                         </Col>
                     </Row>
-                </Container>
+                </Container>:
+                <div className="d-flex justify-content-center pt-5 mt-3">
+                <div className="spinner-border text-primary" role="status">
+                  <span className="sr-only">Loading...</span>
+                </div>
+              </div>
             }
         </div>
     );

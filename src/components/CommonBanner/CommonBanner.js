@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import NavBar from '../Home/NavBar/NavBar';
 import './CommonBanner.css'
-const CommonBanner = () => {
+const CommonBanner = (props) => {
     return (
         <div>
              <NavBar></NavBar>
@@ -12,7 +12,7 @@ const CommonBanner = () => {
                     <Container >
                         <Row >
                             <Col md={12} style={{ zIndex: "10", paddingTop: "150px" }}>
-                                <h1 className="text-white text-center font-weight-bold" style={{ fontSize: "55px" }}>OUR CLASSES</h1>
+    <h1 className="text-white text-center font-weight-bold" style={{ fontSize: "55px" }}>{props.text}</h1>
                             </Col>
 
                         </Row>

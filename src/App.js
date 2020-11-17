@@ -9,6 +9,7 @@ import {
 import Home from './components/Home/Home/Home';
 import OurClasses from './components/OurClasses/OurClasses';
 import ClassSchedule from './components/ClassSchedule/ClassSchedule';
+import Pricing from './components/Pricing/Pricing';
 function App() {
   return (
     <div className="">
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/ourClasses">
             <OurClasses></OurClasses>
+          </Route>
+          <Route path="/pricing">
+           <Pricing></Pricing>
           </Route>
           <Route path="/classSchedule/:id">
             <ClassSchedule></ClassSchedule>

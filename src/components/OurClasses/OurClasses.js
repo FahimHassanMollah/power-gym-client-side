@@ -21,7 +21,7 @@ const OurClasses = () => {
     }, [])
     return (
         <div>
-            <CommonBanner></CommonBanner>
+            <CommonBanner text={"OUR CLASSES"}></CommonBanner>
             <div>
                 <Container>
                     <Row className="d-flex justify-content-center py-4">

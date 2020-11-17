@@ -1,0 +1,31 @@
+.cardss{
+    border: none!important;
+    position: relative;
+}
+.header{
+    position: absolute;
+    top: 80px;
+    right: 0;
+    left: 0;
+    color: white;
+}
+.headerOne{
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    color: white;
+}
+.cardss-text{
+    position: absolute;
+    bottom: 60px;
+    background: goldenrod!important;
+    height: 60px;
+    width: 300px;
+    text-align: center;
+    padding: 5px;
+    color: black!important;
+    font-weight: bold!important;
+    border: none!important;
+    font-size: 20px!important;
+}

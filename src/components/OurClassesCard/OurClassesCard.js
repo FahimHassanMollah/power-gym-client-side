@@ -13,6 +13,7 @@ const OurClassesCard = (props) => {
                     <Card className="cards fards h-100" style={{ width: '350px' }}>
                         <Card.Img style={{height:"300px"}} variant="top" src={props.clas.bgImg} />
                         <Card.Body>
+                            
                             <Button className="card-text">{props.clas.name} <span className="ml-2" style={{ fontSize: "20px" }}> <FaLongArrowAltRight /></span></Button>
                         </Card.Body>
                     </Card>

@@ -85,7 +85,7 @@ const PersonalDetails = (props) => {
                  </div>
                  <div className="form-group row text-right">
                      <div className="col-12">
-                        <input className="btn btn-primary" type="submit" value="Next" />
+                        <input className="btn btn-primary px-5 py-2" type="submit" value="Next" />
                      </div>
                  </div>
                 

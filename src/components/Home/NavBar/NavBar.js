@@ -16,7 +16,7 @@ const NavBar = () => {
                             <NavLink activeStyle={{ fontWeight: "bold", color: "green!important" }} exact className="pl-4 text-white" to="/home">Home</NavLink>
                             <NavLink className="pl-4 text-white" activeStyle={{ fontWeight: "bold", color: "green!important" }} exact to="/ourClasses">Our Classes</NavLink>
                             <NavLink className="pl-4 text-white" activeStyle={{ fontWeight: "bold", color: "green!important" }} exact to="/pricing">Pricing</NavLink>
-                            <NavLink className="pl-4 text-white" activeStyle={{ fontWeight: "bold", color: "green!important" }} exact to="/d">Contact Us</NavLink>
+                            <NavLink className="pl-4 text-white" activeStyle={{ fontWeight: "bold", color: "green!important" }} exact to="/">Contact Us</NavLink>
 
                         </Nav>
 

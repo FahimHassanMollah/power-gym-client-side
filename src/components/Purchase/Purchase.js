@@ -5,6 +5,7 @@ import 'rsuite/dist/styles/rsuite-default.css'
 import { Col, Container, Row } from 'react-bootstrap';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
+import Footer from '../Footer/Footer'
 
 const Purchase = () => {
     const [stepCounter, setStepCounter] = useState(0);
@@ -14,7 +15,23 @@ const Purchase = () => {
         const newData = { ...allData, ...data };
         setAlldData(newData);
     }
-    console.log(allData);
+    if (stepCounter === 2) {
+        fetch('http://localhost:8080/insertPaymentInformation', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(allData),
+        })
+            // .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+    console.log(allData, 'all data');
 
     return (
         <div>
@@ -39,14 +56,33 @@ const Purchase = () => {
                 stepCounter === 0 && <PersonalDetails stepHandlerFunction={stepHandlerFunction} key={setStepCounter} ></PersonalDetails>
             }
             <Container>
-                <Row className="d-flex justify-content-center pt-5 pb-5 mb-5">
+                <Row className="d-flex justify-content-center pt-5  mb-5">
                     <Col md={12}>
                         {
-                            stepCounter === 1 && <ProcessPayment></ProcessPayment>
+                            stepCounter === 1 && <ProcessPayment stepHandlerFunction={stepHandlerFunction} ></ProcessPayment>
+
                         }
                     </Col>
                 </Row>
             </Container>
+            <Container>
+                <Row className="d-flex justify-content-center pb-3 mb-2">
+                    <Col md={12}>
+                        {
+                            stepCounter === 2 && <div className="container text-center">
+                                <h1 className="text-success">
+                                    Thank you for Registration
+                    </h1>
+                                <p className="text-danger">Your Order id  is : {allData.paymentIdNumber}  </p>
+                            </div>
+                        }
+                    </Col>
+                </Row>
+
+            </Container>
+            <div>
+                <Footer></Footer>
+            </div>
         </div>
     );
 };

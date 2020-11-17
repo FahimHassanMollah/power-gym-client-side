@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
-const CheckoutForm = () => {
+import { Button } from 'react-bootstrap';
+const CheckoutForm = (props) => {
+  const [paymentError, setPaymentError] = useState(false);
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
 
@@ -26,19 +29,38 @@ const CheckoutForm = () => {
     });
 
     if (error) {
+      setPaymentError(error.message);
+      setPaymentSuccess(false)
       console.log('[error]', error);
     } else {
+      setPaymentError(false);
+      setPaymentSuccess(true);
+      const paymentIdNumber=paymentMethod.id;
+      const dataId={paymentIdNumber};
+      props.stepHandlerFunction(dataId)
       console.log('[PaymentMethod]', paymentMethod);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+   <div>
+      <form onSubmit={handleSubmit}>
       <CardElement />
-      <button type="submit" disabled={!stripe}>
+      <Button className="pt-2 pb-2 px-3 py-1 mt-2" type="submit" disabled={!stripe}>
         Pay
-      </button>
+      </Button>
     </form>
+    {
+      paymentError&&<div class="alert alert-danger mt-3" role="alert">
+      {paymentError}
+    </div>
+    }
+    {
+      paymentSuccess&&<div class="alert alert-success mt-3" role="alert">
+      Your payment was successfull!
+    </div>
+    }
+   </div>
   );
 };
 

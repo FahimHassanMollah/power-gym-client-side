@@ -4,6 +4,7 @@ import { Steps } from 'rsuite';
 import 'rsuite/dist/styles/rsuite-default.css'
 import { Col, Container, Row } from 'react-bootstrap';
 import PersonalDetails from '../PersonalDetails/PersonalDetails';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const Purchase = () => {
     const [stepCounter, setStepCounter] = useState(0);
@@ -27,16 +28,25 @@ const Purchase = () => {
                             <Steps.Item title="Personal Details" />
                             <Steps.Item title="Bank Payment" />
                             <Steps.Item title="Membership Create" />
-                           
+
                         </Steps>
 
 
                     </Col>
                 </Row>
             </Container>
-           {
-               stepCounter===0&& <PersonalDetails stepHandlerFunction={stepHandlerFunction} key={setStepCounter} ></PersonalDetails>
-           }
+            {
+                stepCounter === 0 && <PersonalDetails stepHandlerFunction={stepHandlerFunction} key={setStepCounter} ></PersonalDetails>
+            }
+            <Container>
+                <Row className="d-flex justify-content-center pt-5 pb-5 mb-5">
+                    <Col md={12}>
+                        {
+                            stepCounter === 1 && <ProcessPayment></ProcessPayment>
+                        }
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };
